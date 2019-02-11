@@ -1,0 +1,24 @@
+;=====================================================
+;     File Includes
+;=====================================================
+
+[section/base]
+include-file = /home/loris/.config/polybar/master.conf
+include-file = /home/loris/.config/polybar/modules.conf
+
+
+;=====================================================
+;     i3 Bars
+;=====================================================
+
+[bar/i3-bar]
+inherit = bar/master
+
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor =
+
+modules-left   = jgmenu i3 
+modules-center = 
+modules-right  = pkg wired-network wireless-network myRoot myData battery volume myClock myDate
+
+
