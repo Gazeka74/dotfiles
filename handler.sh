@@ -11,7 +11,6 @@ OPTIONS="Options:
     -b, --backup    Backup the dotfiles and git add/commit/push"
 
 function backup {
-
     printf "\n===> BACKUPING FILES FOR THE USER : $WHOAMI\n\n"
 
     echo "=> backuping i3"
@@ -85,12 +84,12 @@ function restore {
     sudo mkdir -p /usr/share/rofi/themes
     sudo cp -r $WHEREAMI/rofi/themes /usr/share/rofi/themes
     cp $WHEREAMI/rofi/config ~/.config/rofi/config
-
 }
 
 function print_usage {
-    printf "Usage:\n     $(basename $0) [options]\n\n$OPTIONS\n\n"
+    printf "\nHandler.sh : a small script to backup and restore dotfiles \n\nUsage:\n     $(basename $0) [options]\n\n$OPTIONS\n\n"
 }
+
 while true; do
     if [ -z "$1" ]; then
         print_usage ; exit 1
