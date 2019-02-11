@@ -48,7 +48,33 @@ function backup {
 }
 
 function restore {
-    echo 'void'
+
+    echo "=> backuping i3"
+    mkdir -p $WHEREAMI/i3
+    cp ~/.config/i3/config $WHEREAMI/i3/config
+
+    echo "=> backuping polybar"
+    mkdir -p $WHEREAMI/polybar
+    cp ~/.config/polybar/config $WHEREAMI/polybar/config
+    cp ~/.config/polybar/master.conf $WHEREAMI/polybar/master.conf
+    cp ~/.config/polybar/modules.conf $WHEREAMI/polybar/modules.conf
+
+    echo "=> backuping zshrc"
+    cp ~/.zshrc $WHEREAMI/.zshrc
+
+    echo "=> backuping termite"
+    mkdir -p $WHEREAMI/termite
+    cp ~/.config/termite/config $WHEREAMI/termite/config
+
+    echo "=> backuping i3lock-fancy"
+    mkdir -p $WHEREAMI/locker/usrshare/
+    cp -r /usr/share/i3lock-fancy $WHEREAMI/locker/usrshare/i3lock-fancy
+    cp /usr/bin/i3lock-fancy $WHEREAMI/locker/i3lock-fancy
+
+    echo "=> backuping the background"
+    mkdir -p $WHEREAMI/background/
+    cp /home/loris/Images/background/background.png $WHEREAMI/background/background.png
+
 
 }
 while true; do
@@ -61,6 +87,8 @@ while true; do
             printf "Usage: $(basename $0) [options]\n\n$OPTIONS\n\n" ; exit 1 ;;
         -b|--backup)
             backup; exit 0;;
+        -r|--restore)
+            restore; exit 0;;
     esac
 done
 
