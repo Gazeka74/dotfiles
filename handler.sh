@@ -40,7 +40,7 @@ function backup {
     mkdir -p $WHEREAMI/background/
     cp /home/loris/Images/background/background.png $WHEREAMI/background/background.png
 
-    printf "=> pushing to git \n"
+    printf "=> pushing to git \n\n"
 
     git add .
     git commit -m "AUTO COMMIT : $(date)"
