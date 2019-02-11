@@ -12,7 +12,8 @@ OPTIONS="Options:
 
 function backup {
 
-    printf "\nBACKUPING FILES FOR THE USER : $WHOAMI\n\n"
+    printf "\n    BACKUPING FILES FOR THE USER : $WHOAMI\n\n"
+
     echo "=> backuping i3"
     mkdir -p $WHEREAMI/i3
     cp ~/.config/i3/config $WHEREAMI/i3/config
@@ -46,7 +47,7 @@ function backup {
 }
 
 function restore {
-    echo void
+    printf "\n    RESTORING FILES FOR THE USER : $WHOAMI\n\n"
 }
 while true; do
     if [ -z "$1" ]; then
