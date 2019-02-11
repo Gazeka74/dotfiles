@@ -40,9 +40,8 @@ function backup {
     mkdir -p $WHEREAMI/background/
     cp /home/loris/Images/dobbie1_archlabs2.png $WHEREAMI/background/background.png
 
-    echo "=> pushing to git."
+    echo "=> pushing to git"
 
-    echo $(date)
     git add .
     git commit -m "AUTO COMMIT : $(date)"
     git push origin master
@@ -53,6 +52,10 @@ function restore {
 
 }
 while true; do
+    if [ -z "$1" ]; then
+        printf "Usage: $(basename $0) [options]\n\n$OPTIONS\n\n" ; exit 1
+    fi
+
     case "$1" in
         -h|--help)
             printf "Usage: $(basename $0) [options]\n\n$OPTIONS\n\n" ; exit 1 ;;
