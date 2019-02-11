@@ -84,7 +84,7 @@ function restore {
     echo "=> restoring rofi"
     sudo mkdir -p /usr/share/rofi/themes
     sudo cp -r $WHEREAMI/rofi/themes /usr/share/rofi/themes
-    cp  $WHEREAMI/rofi/config ~/.config/rofi/config
+    cp $WHEREAMI/rofi/config ~/.config/rofi/config
 
 }
 
