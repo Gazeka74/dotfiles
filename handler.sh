@@ -12,7 +12,7 @@ OPTIONS="Options:
 
 function backup {
 
-    printf "\n    BACKUPING FILES FOR THE USER : $WHOAMI\n\n"
+    printf "\n   BACKUPING FILES FOR THE USER : $WHOAMI\n\n"
 
     echo "=> backuping i3"
     mkdir -p $WHEREAMI/i3
@@ -40,14 +40,15 @@ function backup {
     mkdir -p $WHEREAMI/background/
     cp /home/loris/Images/background/background.png $WHEREAMI/background/background.png
 
-    echo "=> pushing to git"
+    printf "=> pushing to git \n"
+
     git add .
     git commit -m "AUTO COMMIT : $(date)"
     git push origin master
 }
 
 function restore {
-    printf "\n    RESTORING FILES FOR THE USER : $WHOAMI\n\n"
+    printf "\n   RESTORING FILES FOR THE USER : $WHOAMI\n\n"
 }
 while true; do
     if [ -z "$1" ]; then
