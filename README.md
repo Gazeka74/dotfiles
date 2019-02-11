@@ -4,10 +4,9 @@
     cd dotfiles
     bash handler.sh
     
-## Handler.sh 
+## Handler.sh [options]
 The script works on my system and might not on yours, be careful !
 
-    ./handler.sh [options]
     Options:
     -h, --help      This help menu.
     -r, --restore   Restore the dotfiles to the correct location
