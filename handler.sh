@@ -2,6 +2,9 @@
 # Author : Gazeka74 <gazeka74@gmail.com>
 
 WHEREAMI=$(pwd)
+
+WHOAMI=$(whoami)
+
 OPTIONS="Options:
     -h, --help      This help menu.
     -r, --restore   Restore the dotfiles to the correct location
@@ -9,6 +12,7 @@ OPTIONS="Options:
 
 function backup {
 
+    echo "BACKUPING FILES FOR THE USER : $WHOAMI"
     echo "=> backuping i3"
     mkdir -p $WHEREAMI/i3
     cp ~/.config/i3/config $WHEREAMI/i3/config
