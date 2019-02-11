@@ -12,7 +12,7 @@ OPTIONS="Options:
 
 function backup {
 
-    echo "BACKUPING FILES FOR THE USER : $WHOAMI"
+    echo "\nBACKUPING FILES FOR THE USER : $WHOAMI\n"
     echo "=> backuping i3"
     mkdir -p $WHEREAMI/i3
     cp ~/.config/i3/config $WHEREAMI/i3/config
