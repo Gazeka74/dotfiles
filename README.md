@@ -2,7 +2,7 @@
 
 ## Handler.sh ##
 
-> git clone https://github.com/Gazeka74/dotfiles
-> cd dotfiles
-> bash handler.sh
+    git clone https://github.com/Gazeka74/dotfiles
+    cd dotfiles
+    bash handler.sh
 
