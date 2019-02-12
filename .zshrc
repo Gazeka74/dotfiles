@@ -43,6 +43,9 @@ function zsrc() {
 }
 [[ ! -e ${ZDOTDIR:-$HOME}/.zshrc.zwc ]] && zsrc &>/dev/null
 
+function cs () {
+    cd "$@" && ls
+}
 # aliases
 alias l='ls'
 alias la='ls -A'
