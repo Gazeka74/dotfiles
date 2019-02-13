@@ -32,7 +32,7 @@ function backup {
 
     echo "=> backuping i3lock-fancy"
     mkdir -p $WHEREAMI/locker/usrshare/
-    cp -r /usr/share/i3lock-fancy $WHEREAMI/locker/usrshare/i3lock-fancy
+    cp -r /usr/share/i3lock-fancy $WHEREAMI/locker/usrshare/
     cp /usr/bin/i3lock-fancy $WHEREAMI/locker/i3lock-fancy
 
     echo "=> backuping the background"
@@ -41,7 +41,7 @@ function backup {
 
     echo "=> backuping rofi"
     mkdir -p $WHEREAMI/rofi/themes
-    cp -r /usr/share/rofi/themes $WHEREAMI/rofi/themes/
+    cp -r /usr/share/rofi/themes $WHEREAMI/rofi/
     cp ~/.config/rofi/config $WHEREAMI/rofi/config
 
     printf "=> pushing to git \n\n"
@@ -73,7 +73,7 @@ function restore {
 
     echo "=> restoring i3lock-fancy (require root rights)"
     sudo mkdir -p /usr/share/i3lock-fancy
-    sudo cp -r $WHEREAMI/locker/usrshare/i3lock-fancy /usr/share/i3lock-fancy
+    sudo cp -r $WHEREAMI/locker/usrshare/i3lock-fancy /usr/share/
     sudo cp $WHEREAMI/locker/i3lock-fancy /usr/bin/i3lock-fancy 
 
     echo "=> restoring the background"
@@ -82,7 +82,7 @@ function restore {
 
     echo "=> restoring rofi"
     sudo mkdir -p /usr/share/rofi/themes
-    sudo cp -r $WHEREAMI/rofi/themes /usr/share/rofi/themes
+    sudo cp -r $WHEREAMI/rofi/themes /usr/share/rofi/
     cp $WHEREAMI/rofi/config ~/.config/rofi/config
 }
 
